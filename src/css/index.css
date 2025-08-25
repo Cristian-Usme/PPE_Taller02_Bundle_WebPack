@@ -1,4 +1,6 @@
-@import "tailwindcss";
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 
 /* Custom CSS Variables */
 :root {
@@ -107,16 +109,25 @@
 
     /* Gallery Styles */
     .gallery-item {
-        @apply group cursor-pointer overflow-hidden rounded-lg;
+        @apply cursor-pointer overflow-hidden rounded-lg;
     }
 
     .gallery-image {
-        @apply w-full h-48 object-cover transition-all duration-300 group-hover:scale-105;
+        @apply w-full h-48 object-cover transition-all duration-300;
+    }
+
+    .gallery-item:hover .gallery-image {
+        @apply scale-105;
     }
 
     /* Floating Button */
     .floating-btn {
-        @apply fixed bottom-6 right-6 w-14 h-14 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 z-50 flex items-center justify-center group;
+        @apply fixed bottom-6 right-6 w-14 h-14 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 z-50 flex items-center justify-center;
+    }
+
+    /* WhatsApp specific styles */
+    .floating-btn.group:hover svg {
+        transform: scale(1.1);
     }
 
     /* Loading Animation */

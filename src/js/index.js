@@ -1,6 +1,6 @@
 /*Punto de entrada de la aplicacion*/
-// Importar estilos
-import '../css/styles.css';
+// Importar estilos - CORREGIDO
+import '../css/index.css';
 
 // Importar módulos
 import { BannerRotator } from './modules/BannerRotator.js';
@@ -119,14 +119,18 @@ class PanOroApp {
             const whatsappBtn = document.querySelector('.floating-btn');
             if (whatsappBtn) {
                 this.components.whatsappButton = new WhatsAppButton(whatsappBtn, {
-                    phoneNumber: '573001112233',
+                    phoneNumber: '+573001112233',
                     message: '¡Hola! Me interesa conocer más sobre Pan & Oro'
                 });
                 initPromises.push(this.components.whatsappButton.init());
             }
 
             // Animation Observer
-            this.components.animationObserver = new AnimationObserver();
+            this.components.animationObserver = new AnimationObserver({
+                selector: '.fade-in, [data-animate], .card, .galeria-grid > .gallery-item',
+                enableStagger: true,
+                staggerDelay: 100
+            });
             initPromises.push(this.components.animationObserver.init());
 
             // Esperar a que todos los componentes se inicialicen
@@ -159,6 +163,15 @@ class PanOroApp {
                     header.classList.remove('bg-white/95');
                     header.classList.remove('backdrop-blur-sm');
                 }
+                
+                // Hide/show header on scroll
+                if (currentScrollY > lastScrollY && currentScrollY > 100) {
+                    // Scrolling down - hide header
+                    header.style.transform = 'translateY(-100%)';
+                } else {
+                    // Scrolling up - show header
+                    header.style.transform = 'translateY(0)';
+                }
             }
             
             lastScrollY = currentScrollY;
@@ -190,6 +203,34 @@ class PanOroApp {
         
         // Focus trap for accessibility
         document.addEventListener('focusin', this.handleFocus.bind(this));
+
+        // Performance monitoring
+        this.setupPerformanceMonitoring();
+    }
+
+    /**
+     * Configura monitoreo de rendimiento
+     */
+    setupPerformanceMonitoring() {
+        // Web Vitals si están disponibles
+        if ('web-vital' in window) {
+            // Monitor Core Web Vitals
+            const vitalsCallback = (metric) => {
+                console.log(`📊 ${metric.name}:`, metric.value);
+            };
+            
+            // Esta sería la implementación real con web-vitals library
+            // getCLS(vitalsCallback);
+            // getFID(vitalsCallback);
+            // getLCP(vitalsCallback);
+        }
+
+        // Monitor load performance
+        window.addEventListener('load', () => {
+            const perfData = performance.timing;
+            const loadTime = perfData.loadEventEnd - perfData.navigationStart;
+            console.log(`🚀 Tiempo de carga total: ${loadTime}ms`);
+        });
     }
 
     /**
@@ -228,6 +269,12 @@ class PanOroApp {
             } else if (event.key === 'ArrowRight') {
                 this.components.bannerRotator.nextSlide();
             }
+        }
+
+        // Ctrl+K para enfocar búsqueda (si existiera)
+        if (event.ctrlKey && event.key === 'k') {
+            event.preventDefault();
+            // Focus search if exists
         }
     }
 
@@ -269,13 +316,13 @@ class PanOroApp {
      */
     showErrorMessage(message) {
         const errorDiv = document.createElement('div');
-        errorDiv.className = 'fixed top-4 right-4 bg-red-500 text-white px-6 py-3 rounded-lg shadow-lg z-50';
+        errorDiv.className = 'fixed top-4 right-4 bg-red-500 text-white px-6 py-3 rounded-lg shadow-lg z-50 max-w-sm';
         errorDiv.innerHTML = `
             <div class="flex items-center">
                 <span class="mr-2">⚠️</span>
-                <span>${message}</span>
-                <button class="ml-4 text-white hover:text-gray-200" onclick="this.parentElement.parentElement.remove()">
-                    ✕
+                <span class="flex-1">${message}</span>
+                <button class="ml-4 text-white hover:text-gray-200 text-xl" onclick="this.parentElement.parentElement.remove()">
+                    ×
                 </button>
             </div>
         `;
@@ -288,6 +335,24 @@ class PanOroApp {
                 errorDiv.remove();
             }
         }, 5000);
+    }
+
+    /**
+     * API pública para interactuar con componentes
+     */
+    getComponent(name) {
+        return this.components[name];
+    }
+
+    /**
+     * Refresca todos los componentes dinámicos
+     */
+    refreshComponents() {
+        Object.values(this.components).forEach(component => {
+            if (typeof component.refresh === 'function') {
+                component.refresh();
+            }
+        });
     }
 
     /**

@@ -97,11 +97,13 @@
 
         <!-- Overlay Content -->
         <div class="absolute inset-0 bg-black/30 flex items-center justify-center">
-            <div class="text-center text-white px-4">
-                <h1 class="text-4xl lg:text-6xl font-bold mb-4">Pan & Oro</h1>
-                <p class="text-lg lg:text-xl mb-8">Panadería artesanal con tradición y calidad</p>
+            <div class="text-center text-white px-4 fade-in">
+                <h1 class="text-4xl lg:text-6xl font-bold mb-4" data-animate="fadeIn">Pan & Oro</h1>
+                <p class="text-lg lg:text-xl mb-8" data-animate="fadeIn" data-animation-delay="200">Panadería artesanal
+                    con tradición y calidad</p>
                 <button
-                    class="btn-primary bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg transition-colors duration-200">
+                    class="btn-primary bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg transition-colors duration-200"
+                    data-animate="scaleIn" data-animation-delay="400">
                     Conoce nuestros productos
                 </button>
             </div>
@@ -112,43 +114,51 @@
     <section id="galeria" class="py-16 bg-white">
         <div class="container mx-auto px-4 lg:px-8">
             <div class="text-center mb-12">
-                <h2 class="text-3xl lg:text-4xl font-bold text-gray-800 mb-4">Galería de Productos</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">Descubre la variedad y calidad de nuestros productos
+                <h2 class="text-3xl lg:text-4xl font-bold text-gray-800 mb-4 fade-in" data-animate="slideInDown">Galería
+                    de Productos</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto fade-in" data-animate="fadeIn" data-animation-delay="200">
+                    Descubre la variedad y calidad de nuestros productos
                     artesanales, elaborados con los mejores ingredientes</p>
             </div>
 
             <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 lg:gap-6">
-                <div class="gallery-item group cursor-pointer">
+                <div class="gallery-item group cursor-pointer overflow-hidden rounded-lg fade-in" data-animate="scaleIn"
+                    data-animation-delay="100">
                     <img src="https://i.pinimg.com/736x/7e/ff/d9/7effd9ccd8a70f98258f53beb0e1932d.jpg"
                         alt="Panadería mostrador"
                         class="w-full h-48 object-cover rounded-lg shadow-md group-hover:shadow-xl group-hover:scale-105 transition-all duration-300"
                         loading="lazy">
                 </div>
-                <div class="gallery-item group cursor-pointer">
+                <div class="gallery-item group cursor-pointer overflow-hidden rounded-lg fade-in" data-animate="scaleIn"
+                    data-animation-delay="200">
                     <img src="https://ca-times.brightspotcdn.com/dims4/default/c02a713/2147483647/strip/true/crop/6000x3997+0+0/resize/1200x799!/quality/75/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2F6c%2F21%2F19709b7743c4a52ec9f4b2146c56%2Fla-photos-1staff-569886-fo-jyan-issac-bread-kkn-19211.JPG"
                         alt="Panadero trabajando"
                         class="w-full h-48 object-cover rounded-lg shadow-md group-hover:shadow-xl group-hover:scale-105 transition-all duration-300"
                         loading="lazy">
                 </div>
-                <div class="gallery-item group cursor-pointer">
+                <div class="gallery-item group cursor-pointer overflow-hidden rounded-lg fade-in" data-animate="scaleIn"
+                    data-animation-delay="300">
                     <img src="https://www.revistapancaliente.co/wp-content/uploads/2024/07/actualidad-amor-hecho-pan-1200x700-1-1024x597.jpg.webp"
                         alt="Panadería artesanal"
                         class="w-full h-48 object-cover rounded-lg shadow-md group-hover:shadow-xl group-hover:scale-105 transition-all duration-300"
                         loading="lazy">
                 </div>
-                <div class="gallery-item group cursor-pointer">
+                <div class="gallery-item group cursor-pointer overflow-hidden rounded-lg fade-in" data-animate="scaleIn"
+                    data-animation-delay="400">
                     <img src="https://previews.123rf.com/images/uatp2/uatp21505/uatp2150500103/39399731-fresh-bread-in-the-bakery.jpg"
                         alt="Pan fresco en panadería"
                         class="w-full h-48 object-cover rounded-lg shadow-md group-hover:shadow-xl group-hover:scale-105 transition-all duration-300"
                         loading="lazy">
                 </div>
-                <div class="gallery-item group cursor-pointer">
+                <div class="gallery-item group cursor-pointer overflow-hidden rounded-lg fade-in" data-animate="scaleIn"
+                    data-animation-delay="500">
                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQtzX_MwpJMl_BcgWXujoqyqK99bzoYu6Ofg&s"
                         alt="Baguettes artesanales"
                         class="w-full h-48 object-cover rounded-lg shadow-md group-hover:shadow-xl group-hover:scale-105 transition-all duration-300"
                         loading="lazy">
                 </div>
-                <div class="gallery-item group cursor-pointer">
+                <div class="gallery-item group cursor-pointer overflow-hidden rounded-lg fade-in" data-animate="scaleIn"
+                    data-animation-delay="600">
                     <img src="https://images.adsttc.com/media/images/66cf/e765/f999/c678/8eb7/9e99/newsletter/interiores-de-pastelerias-y-panaderias-estrategias-de-diseno-que-integran-funciones-usuarios-y-materiales_12.jpg?1724901227"
                         alt="Interior de panadería moderna"
                         class="w-full h-48 object-cover rounded-lg shadow-md group-hover:shadow-xl group-hover:scale-105 transition-all duration-300"
@@ -162,12 +172,14 @@
     <section id="video" class="py-16 bg-gray-50">
         <div class="container mx-auto px-4 lg:px-8">
             <div class="text-center mb-12">
-                <h2 class="text-3xl lg:text-4xl font-bold text-gray-800 mb-4">Nuestro Proceso</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">Conoce cómo elaboramos nuestros productos con dedicación y
+                <h2 class="text-3xl lg:text-4xl font-bold text-gray-800 mb-4 fade-in" data-animate="slideInDown">Nuestro
+                    Proceso</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto fade-in" data-animate="fadeIn" data-animation-delay="200">
+                    Conoce cómo elaboramos nuestros productos con dedicación y
                     amor por la panadería artesanal</p>
             </div>
 
-            <div class="max-w-4xl mx-auto">
+            <div class="max-w-4xl mx-auto fade-in" data-animate="scaleIn" data-animation-delay="400">
                 <div class="relative aspect-video rounded-2xl overflow-hidden shadow-2xl">
                     <iframe src="https://www.youtube.com/embed/r0a8qDfT0Fc?si=pyATf8573NpJNaqS"
                         title="Proceso de panadería artesanal" class="w-full h-full" frameborder="0" allowfullscreen
@@ -182,12 +194,14 @@
     <section id="contacto" class="py-16 bg-white">
         <div class="container mx-auto px-4 lg:px-8">
             <div class="text-center mb-12">
-                <h2 class="text-3xl lg:text-4xl font-bold text-gray-800 mb-4">Contáctanos</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">¿Tienes alguna pregunta o pedido especial? Nos encantaría
+                <h2 class="text-3xl lg:text-4xl font-bold text-gray-800 mb-4 fade-in" data-animate="slideInDown">
+                    Contáctanos</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto fade-in" data-animate="fadeIn" data-animation-delay="200">
+                    ¿Tienes alguna pregunta o pedido especial? Nos encantaría
                     escucharte</p>
             </div>
 
-            <div class="max-w-lg mx-auto">
+            <div class="max-w-lg mx-auto fade-in" data-animate="slideInUp" data-animation-delay="400">
                 <form class="contact-form space-y-6">
                     <div>
                         <input type="text" name="name" placeholder="Tu nombre completo" required
@@ -226,7 +240,7 @@
 
     <!-- Floating WhatsApp Button -->
     <button
-        class="floating-btn fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white rounded-full w-14 h-14 shadow-lg hover:shadow-xl transition-all duration-300 z-50 flex items-center justify-center group">
+        class="floating-btn group fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white rounded-full w-14 h-14 shadow-lg hover:shadow-xl transition-all duration-300 z-50 flex items-center justify-center">
         <svg class="w-7 h-7 group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 24 24">
             <path
                 d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488" />
