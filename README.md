@@ -1,7 +1,3 @@
-Parece que estás pidiendo la documentación de "Getting Started" en formato markdown para el proyecto Pan & Oro. <cite/>
-
-Basándome en el contexto del codebase, este es un proyecto de una página web para una panadería llamada "Pan & Oro" construido con Webpack, Tailwind CSS y JavaScript modular. [1](#0-0)
-
 ## Getting Started
 
 ### Requisitos Previos
