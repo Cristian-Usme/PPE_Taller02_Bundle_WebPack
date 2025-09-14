@@ -20,16 +20,19 @@
                 <div class="logo text-2xl font-bold text-blue-600 hover:text-blue-700 transition-colors">
                     Pan & Oro
                 </div>
-                <ul class="hidden md:flex space-x-8 text-sm font-medium">
-                    <li><a href="#banners"
-                            class="text-gray-700 hover:text-blue-600 transition-colors duration-200">Inicio</a></li>
-                    <li><a href="#galeria"
-                            class="text-gray-700 hover:text-blue-600 transition-colors duration-200">Galería</a></li>
-                    <li><a href="#video"
-                            class="text-gray-700 hover:text-blue-600 transition-colors duration-200">Video</a></li>
-                    <li><a href="#contacto"
-                            class="text-gray-700 hover:text-blue-600 transition-colors duration-200">Contacto</a></li>
-                </ul>
+        <ul class="hidden md:flex space-x-8 text-sm font-medium">
+            <li><a href="#banners"
+                class="text-gray-700 hover:text-blue-600 transition-colors duration-200">Inicio</a></li>
+            <li><a href="#galeria"
+                class="text-gray-700 hover:text-blue-600 transition-colors duration-200">Galería</a></li>
+            <li><a href="#video"
+                class="text-gray-700 hover:text-blue-600 transition-colors duration-200">Video</a></li>
+            <li><a href="#contacto"
+                class="text-gray-700 hover:text-blue-600 transition-colors duration-200">Contacto</a></li>
+            <li>
+            <a href="login.html" class="ml-4 px-4 py-2 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-colors">Login</a>
+            </li>
+        </ul>
 
                 <!-- Mobile menu button -->
                 <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors">
@@ -42,20 +45,23 @@
 
             <!-- Mobile menu -->
             <div id="mobile-menu" class="md:hidden hidden pb-4">
-                <ul class="space-y-2">
-                    <li><a href="#banners"
-                            class="block py-2 px-4 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors">Inicio</a>
-                    </li>
-                    <li><a href="#galeria"
-                            class="block py-2 px-4 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors">Galería</a>
-                    </li>
-                    <li><a href="#video"
-                            class="block py-2 px-4 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors">Video</a>
-                    </li>
-                    <li><a href="#contacto"
-                            class="block py-2 px-4 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors">Contacto</a>
-                    </li>
-                </ul>
+        <ul class="space-y-2">
+            <li><a href="#banners"
+                class="block py-2 px-4 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors">Inicio</a>
+            </li>
+            <li><a href="#galeria"
+                class="block py-2 px-4 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors">Galería</a>
+            </li>
+            <li><a href="#video"
+                class="block py-2 px-4 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors">Video</a>
+            </li>
+            <li><a href="#contacto"
+                class="block py-2 px-4 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors">Contacto</a>
+            </li>
+            <li>
+            <a href="src\login.html" class="block py-2 px-4 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-colors">Login</a>
+            </li>
+        </ul>
             </div>
         </nav>
     </header>
@@ -256,5 +262,23 @@
         </div>
     </div>
 </body>
+        <div id="app">
+                <!-- Formulario de Registro -->
+                <form id="signup-form">
+                    <h2>Registro</h2>
+                    <input type="email" id="signup-email" placeholder="Email" required>
+                    <input type="password" id="signup-password" placeholder="Contraseña" required>
+                    <button type="submit">Registrarse</button>
+                    <div id="signup-message"></div>
+                </form>
 
-</html>
+                <!-- Formulario de Login -->
+                <form id="login-form">
+                    <h2>Iniciar Sesión</h2>
+                    <input type="email" id="login-email" placeholder="Email" required>
+                    <input type="password" id="login-password" placeholder="Contraseña" required>
+                    <button type="submit">Entrar</button>
+                    <div id="login-message"></div>
+                </form>
+                <!-- Contenido principal aquí -->
+        </div>

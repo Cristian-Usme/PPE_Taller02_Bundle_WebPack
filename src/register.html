@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro - Pan & Oro</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/register.css">
+</head>
+<body>
+    <header id="header" class="sticky top-0 bg-white shadow-lg z-50 transition-all duration-300">
+        <nav class="container mx-auto px-4 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="logo text-2xl font-bold text-blue-600 hover:text-blue-700 transition-colors">
+                    <a href="index.html">Pan & Oro</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main class="auth-main">
+        <form id="signup-form" class="auth-card">
+            <h2>Registro</h2>
+            <input type="email" id="signup-email" placeholder="Email" required class="auth-input">
+            <input type="password" id="signup-password" placeholder="Contraseña" required class="auth-input">
+            <button type="submit" class="auth-btn">Registrarse</button>
+            <div id="signup-message" class="mt-4 text-center text-red-600"></div>
+            <div class="mt-6 text-center">
+                ¿Ya tienes cuenta? <a href="login.html" class="auth-link">Inicia sesión</a>
+            </div>
+        </form>
+    </main>
+    <script type="module" src="./js/register.js"></script>
+</body>
+</html>

@@ -11,6 +11,7 @@ import { SmoothScroll } from './modules/SmoothScroll.js';
 import { LazyLoading } from './modules/LazyLoading.js';
 import { WhatsAppButton } from './modules/WhatsAppButton.js';
 import { AnimationObserver } from './modules/AnimationObserver.js';
+import { signUp, signIn } from './modules/Auth.js';
 
 /**
  * Clase principal de la aplicación Pan & Oro
@@ -27,6 +28,30 @@ class PanOroApp {
         // Error handling
         window.addEventListener('error', this.handleError);
         window.addEventListener('unhandledrejection', this.handleError);
+
+                // Formularios de registro y login
+                document.addEventListener('DOMContentLoaded', () => {
+                    const signupForm = document.getElementById('signup-form');
+                    if (signupForm) {
+                        signupForm.addEventListener('submit', async (e) => {
+                            e.preventDefault();
+                            const email = document.getElementById('signup-email').value;
+                            const password = document.getElementById('signup-password').value;
+                            const error = await signUp(email, password);
+                            document.getElementById('signup-message').textContent = error ? error.message : '¡Registro exitoso! Revisa tu correo.';
+                        });
+                    }
+                    const loginForm = document.getElementById('login-form');
+                    if (loginForm) {
+                        loginForm.addEventListener('submit', async (e) => {
+                            e.preventDefault();
+                            const email = document.getElementById('login-email').value;
+                            const password = document.getElementById('login-password').value;
+                            const error = await signIn(email, password);
+                            document.getElementById('login-message').textContent = error ? error.message : '¡Login exitoso!';
+                        });
+                    }
+                });
     }
 
     /**

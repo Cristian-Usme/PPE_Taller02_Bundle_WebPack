@@ -3,12 +3,16 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = (env, argv) => {
   const isProduction = argv.mode === 'production';
-  
+
   return {
-    entry: './src/js/index.js',
+    entry: {
+      main: './src/js/index.js',
+      login: './src/js/login.js',
+      register: './src/js/register.js',
+    },
     output: {
       path: path.resolve(__dirname, 'dist'),
-      filename: isProduction ? '[name].[contenthash].js' : 'bundle.js',
+      filename: isProduction ? '[name].[contenthash].js' : '[name].js',
       clean: true,
       assetModuleFilename: 'assets/[hash][ext][query]'
     },
@@ -38,6 +42,41 @@ module.exports = (env, argv) => {
       new HtmlWebpackPlugin({
         template: './src/index.html',
         filename: 'index.html',
+        chunks: ['main'],
+        minify: isProduction ? {
+          removeComments: true,
+          collapseWhitespace: true,
+          removeRedundantAttributes: true,
+          useShortDoctype: true,
+          removeEmptyAttributes: true,
+          removeStyleLinkTypeAttributes: true,
+          keepClosingSlash: true,
+          minifyJS: true,
+          minifyCSS: true,
+          minifyURLs: true,
+        } : false,
+      }),
+      new HtmlWebpackPlugin({
+        template: './src/login.html',
+        filename: 'login.html',
+        chunks: ['login'],
+        minify: isProduction ? {
+          removeComments: true,
+          collapseWhitespace: true,
+          removeRedundantAttributes: true,
+          useShortDoctype: true,
+          removeEmptyAttributes: true,
+          removeStyleLinkTypeAttributes: true,
+          keepClosingSlash: true,
+          minifyJS: true,
+          minifyCSS: true,
+          minifyURLs: true,
+        } : false,
+      }),
+      new HtmlWebpackPlugin({
+        template: './src/register.html',
+        filename: 'register.html',
+        chunks: ['register'],
         minify: isProduction ? {
           removeComments: true,
           collapseWhitespace: true,
@@ -65,9 +104,16 @@ module.exports = (env, argv) => {
       } : false,
     },
     devServer: {
-      static: {
-        directory: path.join(__dirname, 'dist'),
-      },
+      static: [
+        {
+          directory: path.join(__dirname, 'dist'),
+        },
+        {
+          directory: path.join(__dirname, 'src', 'css'),
+          publicPath: '/css',
+          watch: true,
+        },
+      ],
       compress: true,
       port: 9000,
       open: true,
