@@ -1,0 +1,70 @@
+/* Estilos para register.html */
+body {
+    background: #f9fafb;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    color: #1f2937;
+}
+.auth-main {
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+.auth-card {
+    background: #fff;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+    width: 100%;
+    max-width: 400px;
+    padding: 2rem 2rem 1.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+}
+.auth-card h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+.auth-input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    transition: border-color 0.2s;
+    font-family: inherit;
+}
+.auth-input:focus {
+    border-color: #2563eb;
+    outline: none;
+}
+.auth-btn {
+    width: 100%;
+    background: #2563eb;
+    color: #fff;
+    font-weight: 600;
+    padding: 0.75rem 0;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+    margin-top: 0.5rem;
+}
+.auth-btn:hover {
+    background: #1d4ed8;
+}
+.auth-link {
+    color: #2563eb;
+    text-decoration: underline;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+.auth-link:hover {
+    color: #1d4ed8;
+}

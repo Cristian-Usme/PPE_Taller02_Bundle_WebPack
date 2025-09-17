@@ -10,7 +10,7 @@
 1. **Clonar el repositorio**
 
    ```bash
-   git clone [repository-url]
+   git clone https://github.com/Cristian-Usme/PPE_Taller02_Bundle_WebPack.git
    cd PPE_Taller02_Bundle_WebPack
    ```
 
