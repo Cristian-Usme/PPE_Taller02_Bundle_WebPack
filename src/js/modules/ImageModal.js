@@ -1,6 +1,4 @@
-/**
- * Módulo ImageModal - Modal para visualizar imágenes de la galería
- */
+
 export class ImageModal {
     constructor(options = {}) {
         this.options = {

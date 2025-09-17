@@ -1,6 +1,4 @@
-/**
- * Módulo MobileMenu - Menú responsive para móviles
- */
+
 export class MobileMenu {
     constructor(toggleButton, menuContainer, options = {}) {
         this.toggleButton = toggleButton;

@@ -1,6 +1,4 @@
-/**
- * Módulo WhatsAppButton - Botón flotante de WhatsApp
- */
+
 export class WhatsAppButton {
     constructor(buttonElement, options = {}) {
         this.button = buttonElement;

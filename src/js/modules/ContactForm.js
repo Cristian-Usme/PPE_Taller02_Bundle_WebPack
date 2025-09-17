@@ -1,6 +1,4 @@
-/**
- * Módulo ContactForm - Formulario de contacto mejorado
- */
+
 export class ContactForm {
     constructor(formElement, options = {}) {
         this.form = formElement;

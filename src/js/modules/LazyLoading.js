@@ -1,6 +1,4 @@
-/**
- * Módulo LazyLoading - Carga perezosa de imágenes y contenido
- */
+
 export class LazyLoading {
     constructor(options = {}) {
         this.options = {

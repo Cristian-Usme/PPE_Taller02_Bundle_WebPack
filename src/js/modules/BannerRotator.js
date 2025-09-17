@@ -1,6 +1,4 @@
-/**
- * Módulo BannerRotator - Carrusel de imágenes mejorado
- */
+
 export class BannerRotator {
     constructor(container, options = {}) {
         this.container = container;

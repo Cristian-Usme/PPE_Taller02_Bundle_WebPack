@@ -1,6 +1,4 @@
-/**
- * Módulo AnimationObserver - Animaciones basadas en scroll y visibilidad
- */
+
 export class AnimationObserver {
     constructor(options = {}) {
         this.options = {

@@ -1,5 +1,4 @@
-/*Punto de entrada de la aplicacion*/
-// Importar estilos - CORREGIDO
+
 import '../css/index.css';
 
 // Importar módulos
@@ -7,7 +6,6 @@ import { BannerRotator } from './modules/BannerRotator.js';
 import { MobileMenu } from './modules/MobileMenu.js';
 import { ContactForm } from './modules/ContactForm.js';
 import { ImageModal } from './modules/ImageModal.js';
-import { SmoothScroll } from './modules/SmoothScroll.js';
 import { LazyLoading } from './modules/LazyLoading.js';
 import { WhatsAppButton } from './modules/WhatsAppButton.js';
 import { AnimationObserver } from './modules/AnimationObserver.js';
@@ -104,9 +102,7 @@ class PanOroApp {
                 initPromises.push(this.components.imageModal.init());
             }
 
-            // Smooth Scroll
-            this.components.smoothScroll = new SmoothScroll();
-            initPromises.push(this.components.smoothScroll.init());
+            
 
             // Lazy Loading
             const lazyImages = document.querySelectorAll('img[loading="lazy"]');
