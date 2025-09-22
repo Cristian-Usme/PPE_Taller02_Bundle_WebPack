@@ -1,0 +1,326 @@
+:root {
+    --color-primario: #6D4C41;
+    /* Marrón oscuro para texto y acentos */
+    --color-secundario: #D7CCC8;
+    /* Marrón claro para fondos */
+    --color-fondo: #F5F5F5;
+    /* Un blanco roto muy suave */
+    --color-tarjeta: #FFFFFF;
+    /* Blanco puro para las tarjetas */
+    --color-error: #D32F2F;
+    /* Rojo para botones de eliminar */
+    --color-exito: #388E3C;
+    /* Verde para mensajes de éxito */
+    --sombra-tarjeta: 0 4px 8px rgba(0, 0, 0, 0.1);
+    --borde-radio: 8px;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    margin: 0;
+    background-color: var(--color-fondo);
+    color: var(--color-primario);
+    padding-bottom: 100px;
+    /* Espacio para la paginación fija */
+}
+
+main {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* --- Encabezado --- */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: var(--color-tarjeta);
+    border-bottom: 2px solid var(--color-secundario);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.5em;
+}
+
+/* --- Estilos para Formularios y Botones --- */
+form {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    /* Para que se ajuste en pantallas pequeñas */
+    margin-bottom: 10px;
+}
+
+input[type="text"],
+input[type="number"] {
+    padding: 10px;
+    border: 1px solid var(--color-secundario);
+    border-radius: var(--borde-radio);
+    font-size: 1em;
+    flex: 1;
+    /* Ocupa el espacio disponible */
+    min-width: 150px;
+}
+
+button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: var(--borde-radio);
+    background-color: var(--color-primario);
+    color: white;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #4E342E;
+    /* Un marrón más oscuro */
+}
+
+button:disabled {
+    background-color: var(--color-secundario);
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+#logout-button {
+    background-color: transparent;
+    color: var(--color-primario);
+    border: 2px solid var(--color-primario);
+}
+
+#logout-button:hover {
+    background-color: var(--color-primario);
+    color: white;
+}
+
+/* --- Secciones Principales --- */
+main>section {
+    background-color: var(--color-tarjeta);
+    padding: 20px;
+    border-radius: var(--borde-radio);
+    box-shadow: var(--sombra-tarjeta);
+    margin-bottom: 30px;
+}
+
+h2 {
+    margin-top: 0;
+    border-bottom: 2px solid var(--color-secundario);
+    padding-bottom: 10px;
+}
+
+#search-bar {
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 20px;
+}
+
+/* --- Lista de Productos (Diseño de Cuadrícula/Tabla) --- */
+#product-list-container {
+    display: grid;
+    /* Crea columnas automáticas que miden mínimo 300px y máximo 1fr (fracción del espacio) */
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    /* Espacio entre las tarjetas */
+    margin-bottom: 120px;
+    /* Espacio extra para la paginación fija */
+}
+
+/* --- Tarjeta de Producto Individual --- */
+.item-card {
+    border: 1px solid var(--color-secundario);
+    border-radius: var(--borde-radio);
+    padding: 15px;
+    background-color: #FAFAFA;
+    transition: box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.item-card:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.item-card h3 {
+    margin: 0 0 10px 0;
+    font-size: 1.2em;
+}
+
+.item-card p {
+    margin: 5px 0;
+    flex-grow: 1;
+    /* Empuja el botón hacia abajo */
+}
+
+.item-card .delete-button {
+    background-color: var(--color-error);
+    align-self: flex-end;
+    /* Alinea el botón a la derecha */
+}
+
+.item-card .delete-button:hover {
+    background-color: #B71C1C;
+    /* Rojo más oscuro */
+}
+
+/* --- Mensajes de feedback --- */
+#add-message {
+    color: var(--color-exito);
+    font-weight: bold;
+}
+
+/* --- ESTILOS DE PAGINACIÓN --- */
+.pagination-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--color-tarjeta);
+    border-top: 2px solid var(--color-secundario);
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+    padding: 15px 20px;
+    z-index: 1000;
+}
+
+.pagination-info {
+    text-align: center;
+    margin-bottom: 12px;
+    color: var(--color-primario);
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.pagination-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.pagination-buttons button {
+    padding: 8px 12px;
+    border: 1px solid var(--color-secundario);
+    background-color: var(--color-tarjeta);
+    color: var(--color-primario);
+    cursor: pointer;
+    border-radius: var(--borde-radio);
+    font-size: 14px;
+    transition: all 0.3s ease;
+    min-width: 40px;
+}
+
+.pagination-buttons button:hover:not(:disabled) {
+    background-color: var(--color-secundario);
+    border-color: var(--color-primario);
+}
+
+.pagination-buttons button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    background-color: #FAFAFA;
+    color: var(--color-secundario);
+}
+
+.page-numbers {
+    display: flex;
+    gap: 6px;
+    margin: 0 15px;
+}
+
+.page-number {
+    min-width: 35px;
+    font-weight: 500;
+}
+
+.page-number.active {
+    background-color: var(--color-primario);
+    color: var(--color-tarjeta);
+    border-color: var(--color-primario);
+}
+
+.page-number.active:hover {
+    background-color: #4E342E;
+    border-color: #4E342E;
+}
+
+/* Botones de navegación anterior/siguiente */
+#prev-page,
+#next-page {
+    font-weight: 600;
+    padding: 8px 16px;
+}
+
+/* --- Diseño Responsivo para Pantallas Pequeñas --- */
+@media (max-width: 768px) {
+    body {
+        padding-bottom: 140px;
+        /* Más espacio en móviles */
+    }
+
+    header {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    #product-list-container {
+        /* En pantallas pequeñas, solo habrá una columna */
+        grid-template-columns: 1fr;
+        margin-bottom: 160px;
+        /* Más espacio en móviles */
+    }
+
+    form {
+        flex-direction: column;
+    }
+
+    .pagination-container {
+        padding: 12px 15px;
+    }
+
+    .pagination-buttons {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .page-numbers {
+        margin: 0;
+        justify-content: center;
+        order: 2;
+        /* Los números van después */
+    }
+
+    #prev-page,
+    #next-page {
+        order: 1;
+        /* Los botones van primero */
+        width: 100%;
+        max-width: 200px;
+    }
+
+    .pagination-info {
+        font-size: 12px;
+        margin-bottom: 10px;
+    }
+
+    .pagination-buttons button {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-numbers {
+        flex-wrap: wrap;
+        gap: 4px;
+    }
+
+    .page-number {
+        min-width: 30px;
+        padding: 6px 8px;
+        font-size: 12px;
+    }
+}

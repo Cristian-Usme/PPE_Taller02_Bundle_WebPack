@@ -9,6 +9,7 @@ module.exports = (env, argv) => {
       main: './src/js/index.js',
       login: './src/js/login.js',
       register: './src/js/register.js',
+      dashboard: './src/js/dashboard.js'
     },
     output: {
       path: path.resolve(__dirname, 'dist'),
@@ -90,6 +91,23 @@ module.exports = (env, argv) => {
           minifyURLs: true,
         } : false,
       }),
+      new HtmlWebpackPlugin({
+      template: './src/dashboard.html',
+      filename: 'dashboard.html',
+      chunks: ['dashboard'],
+      minify: isProduction ? {
+          removeComments: true,
+          collapseWhitespace: true,
+          removeRedundantAttributes: true,
+          useShortDoctype: true,
+          removeEmptyAttributes: true,
+          removeStyleLinkTypeAttributes: true,
+          keepClosingSlash: true,
+          minifyJS: true,
+          minifyCSS: true,
+          minifyURLs: true,
+        } : false, 
+    }),
     ],
     optimization: {
       splitChunks: isProduction ? {

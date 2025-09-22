@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Mi App</title>
+    <link rel="stylesheet" href="./css/dashboard.css">
+</head>
+
+<body>
+    <header>
+        <h1>Dashboard de Productos 🍞</h1>
+        <button id="logout-button">Cerrar Sesión</button>
+    </header>
+
+    <main>
+        <section id="add-item-section">
+            <h2>Agregar Nuevo Producto</h2>
+            <form id="add-product-form">
+                <input type="text" id="product-name" placeholder="Nombre del producto (ej: Croissant)" required>
+                <input type="text" id="product-category" placeholder="Categoría (ej: Pan, Postre)">
+                <input type="number" id="product-stock" placeholder="Stock inicial" required>
+                <button type="submit">Agregar Producto</button>
+            </form>
+            <p id="add-message"></p>
+        </section>
+
+        <section id="item-list-section">
+            <h2>Inventario de Productos</h2>
+            <input type="text" id="search-bar" placeholder="Buscar por nombre de producto...">
+            <div id="product-list-container">
+            </div>
+            <p id="list-message"></p>
+        </section>
+    </main>
+
+    <script type="module" src="./js/dashboard.js"></script>
+</body>
+
+</html>

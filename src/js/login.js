@@ -11,7 +11,8 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!error) {
         document.getElementById('login-message').textContent = '¡Login exitoso!';
         setTimeout(() => {
-          window.location.href = 'index.html';
+          // Ruta corregida para la redirección
+          window.location.href = 'dashboard.html';
         }, 1000);
       } else {
         document.getElementById('login-message').textContent = error.message;
